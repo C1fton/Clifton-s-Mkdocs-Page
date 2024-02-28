@@ -14,7 +14,7 @@
         <link rel="prev" href="../AI/">
       
       
-        <link rel="next" href="../latex/">
+        <link rel="next" href="../ADC/">
       
       
       <link rel="icon" href="../assets/images/favicon.png">
@@ -74,6 +74,11 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
+      
+        
+        <a href="#stm32" class="md-skip">
+          跳转至
+        </a>
       
     </div>
     <div data-md-component="announce">
@@ -528,6 +533,10 @@
       
         
       
+        
+      
+        
+      
     
     
       
@@ -579,6 +588,19 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    STM32
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
         
@@ -590,6 +612,118 @@
 
       </a>
       
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      硬件资源
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="硬件资源">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#gpio" class="md-nav__link">
+    <span class="md-ellipsis">
+      GPIO
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exti" class="md-nav__link">
+    <span class="md-ellipsis">
+      EXTI
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      标准库开发
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hal" class="md-nav__link">
+    <span class="md-ellipsis">
+      Hal库开发
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ADC/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ADC
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E8%93%9D%E7%89%99/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    蓝牙
+  </span>
+  
+
+      </a>
     </li>
   
 
@@ -610,6 +744,8 @@
   
     
     
+      
+        
       
         
       
@@ -710,6 +846,8 @@
   
     
     
+      
+        
       
         
       
@@ -819,6 +957,67 @@
   
   
   
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      硬件资源
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="硬件资源">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#gpio" class="md-nav__link">
+    <span class="md-ellipsis">
+      GPIO
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exti" class="md-nav__link">
+    <span class="md-ellipsis">
+      EXTI
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      标准库开发
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hal" class="md-nav__link">
+    <span class="md-ellipsis">
+      Hal库开发
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -836,9 +1035,12 @@
   
 
 
-  <h1>STM32</h1>
-
-<p>1</p>
+<h1 id="stm32">STM32<a class="headerlink" href="#stm32" title="Permanent link">&para;</a></h1>
+<h2 id="_1">硬件资源<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<h3 id="gpio">GPIO<a class="headerlink" href="#gpio" title="Permanent link">&para;</a></h3>
+<h3 id="exti">EXTI<a class="headerlink" href="#exti" title="Permanent link">&para;</a></h3>
+<h2 id="_2">标准库开发<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<h2 id="hal">Hal库开发<a class="headerlink" href="#hal" title="Permanent link">&para;</a></h2>
 
 
 
@@ -891,13 +1093,13 @@
         
         
           
-          <a href="../latex/" class="md-footer__link md-footer__link--next" aria-label="下一页: LaTeX">
+          <a href="../ADC/" class="md-footer__link md-footer__link--next" aria-label="下一页: ADC">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 下一页
               </span>
               <div class="md-ellipsis">
-                LaTeX
+                ADC
               </div>
             </div>
             <div class="md-footer__button md-icon">
