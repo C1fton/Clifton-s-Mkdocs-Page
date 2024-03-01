@@ -701,7 +701,7 @@
           <li class="md-nav__item">
   <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
-      宏包调用
+      文档
     </span>
   </a>
   
@@ -710,7 +710,7 @@
           <li class="md-nav__item">
   <a href="#_4" class="md-nav__link">
     <span class="md-ellipsis">
-      多级标题
+      宏包调用
     </span>
   </a>
   
@@ -719,7 +719,7 @@
           <li class="md-nav__item">
   <a href="#_5" class="md-nav__link">
     <span class="md-ellipsis">
-      插入图片
+      多级标题
     </span>
   </a>
   
@@ -727,6 +727,24 @@
         
           <li class="md-nav__item">
   <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      插入图片
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      表格
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
     <span class="md-ellipsis">
       参考文献引用
     </span>
@@ -1006,7 +1024,7 @@
           <li class="md-nav__item">
   <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
-      宏包调用
+      文档
     </span>
   </a>
   
@@ -1015,7 +1033,7 @@
           <li class="md-nav__item">
   <a href="#_4" class="md-nav__link">
     <span class="md-ellipsis">
-      多级标题
+      宏包调用
     </span>
   </a>
   
@@ -1024,7 +1042,7 @@
           <li class="md-nav__item">
   <a href="#_5" class="md-nav__link">
     <span class="md-ellipsis">
-      插入图片
+      多级标题
     </span>
   </a>
   
@@ -1032,6 +1050,24 @@
         
           <li class="md-nav__item">
   <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      插入图片
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      表格
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
     <span class="md-ellipsis">
       参考文献引用
     </span>
@@ -1077,10 +1113,106 @@
 <p>采用TexLive+TexStudio方案</p>
 </blockquote>
 <h2 id="_2">基本语法<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
-<h3 id="_3">宏包调用<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
-<h3 id="_4">多级标题<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
-<h3 id="_5">插入图片<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
-<h3 id="_6">参考文献引用<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
+<h3 id="_3">文档<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<p>TeX有多种文档类型，比较常用的有下列几种：</p>
+<ul>
+<li>
+<p>英文文档</p>
+<ul>
+<li>article</li>
+<li>book </li>
+<li>beamer</li>
+</ul>
+</li>
+<li>
+<p>中文文档</p>
+<ul>
+<li>ctexbook</li>
+<li>ctexart</li>
+<li>ctexbeamer</li>
+</ul>
+</li>
+</ul>
+<p>在.tex文件第一行，我们输入如下内容来设置文档类型
+<div class="language-text highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a><a href="#__codelineno-0-1"><span class="linenos" data-linenos="1 "></span></a>% []内设置基本参数，{}内填写文档类型
+<a id="__codelineno-0-2" name="__codelineno-0-2"></a><a href="#__codelineno-0-2"><span class="linenos" data-linenos="2 "></span></a>\documentclass[12pt,a4paper,oneside]{ctexart}
+</code></pre></div>
+文件的正文部分需要放入document环境中，在document环境外的部分不会出现在文件中。
+<div class="language-text highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a><a href="#__codelineno-1-1"><span class="linenos" data-linenos="1 "></span></a>\documentclass[12pt, a4paper, oneside]{ctexart}
+<a id="__codelineno-1-2" name="__codelineno-1-2"></a><a href="#__codelineno-1-2"><span class="linenos" data-linenos="2 "></span></a>\begin{document}
+<a id="__codelineno-1-3" name="__codelineno-1-3"></a><a href="#__codelineno-1-3"><span class="linenos" data-linenos="3 "></span></a>这里是正文. 
+<a id="__codelineno-1-4" name="__codelineno-1-4"></a><a href="#__codelineno-1-4"><span class="linenos" data-linenos="4 "></span></a>\end{document}
+</code></pre></div></p>
+<h3 id="_4">宏包调用<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<p>为了完成一些功能（如定理环境），还需要在导言区，也即document环境之前加载宏包。加载宏包的代码是<code>\usepackage{}</code></p>
+<p>常用</p>
+<h3 id="_5">多级标题<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<h3 id="_6">插入图片<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
+<p>插入图片需要使用<code>graphicx</code>宏包，具体操作代码如下：
+<div class="language-text highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a><a href="#__codelineno-2-1"><span class="linenos" data-linenos="1 "></span></a>\begin{figure}[htbp]
+<a id="__codelineno-2-2" name="__codelineno-2-2"></a><a href="#__codelineno-2-2"><span class="linenos" data-linenos="2 "></span></a>    \centering
+<a id="__codelineno-2-3" name="__codelineno-2-3"></a><a href="#__codelineno-2-3"><span class="linenos" data-linenos="3 "></span></a>    \includegraphics[width=3cm]{图片.jpg}
+<a id="__codelineno-2-4" name="__codelineno-2-4"></a><a href="#__codelineno-2-4"><span class="linenos" data-linenos="4 "></span></a>    \caption{图片标题}
+<a id="__codelineno-2-5" name="__codelineno-2-5"></a><a href="#__codelineno-2-5"><span class="linenos" data-linenos="5 "></span></a>    \end{figure}
+</code></pre></div></p>
+<p>其中，[htbp]的作用是自动选择插入图片的最优位置，\centering设置让图片居中，[width=3cm]设置了图片的宽度，\caption{}用于设置图片的标题，若图片与tex文件不在同一文件夹下，则需要使用相对路径。</p>
+<p>另外，若要在同一行内插入多张图片，可以使用<code>subfigure</code>宏包，例如：
+<div class="language-text highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1"></a><a href="#__codelineno-3-1"><span class="linenos" data-linenos=" 1 "></span></a>\usepackage{subfigure}
+<a id="__codelineno-3-2" name="__codelineno-3-2"></a><a href="#__codelineno-3-2"><span class="linenos" data-linenos=" 2 "></span></a>
+<a id="__codelineno-3-3" name="__codelineno-3-3"></a><a href="#__codelineno-3-3"><span class="linenos" data-linenos=" 3 "></span></a>\begin{figure}[htbp]
+<a id="__codelineno-3-4" name="__codelineno-3-4"></a><a href="#__codelineno-3-4"><span class="linenos" data-linenos=" 4 "></span></a>\centering
+<a id="__codelineno-3-5" name="__codelineno-3-5"></a><a href="#__codelineno-3-5"><span class="linenos" data-linenos=" 5 "></span></a>\subfigure[Fig 1]{
+<a id="__codelineno-3-6" name="__codelineno-3-6"></a><a href="#__codelineno-3-6"><span class="linenos" data-linenos=" 6 "></span></a>\includegraphics[width = .47\textwidth]{2-1.png}
+<a id="__codelineno-3-7" name="__codelineno-3-7"></a><a href="#__codelineno-3-7"><span class="linenos" data-linenos=" 7 "></span></a>}
+<a id="__codelineno-3-8" name="__codelineno-3-8"></a><a href="#__codelineno-3-8"><span class="linenos" data-linenos=" 8 "></span></a>\quad
+<a id="__codelineno-3-9" name="__codelineno-3-9"></a><a href="#__codelineno-3-9"><span class="linenos" data-linenos=" 9 "></span></a>\subfigure[Fig 2]{
+<a id="__codelineno-3-10" name="__codelineno-3-10"></a><a href="#__codelineno-3-10"><span class="linenos" data-linenos="10 "></span></a>\includegraphics[width = .47\textwidth]{2-2.png}
+<a id="__codelineno-3-11" name="__codelineno-3-11"></a><a href="#__codelineno-3-11"><span class="linenos" data-linenos="11 "></span></a>}
+<a id="__codelineno-3-12" name="__codelineno-3-12"></a><a href="#__codelineno-3-12"><span class="linenos" data-linenos="12 "></span></a>\caption{Fig}
+<a id="__codelineno-3-13" name="__codelineno-3-13"></a><a href="#__codelineno-3-13"><span class="linenos" data-linenos="13 "></span></a>\end{figure}
+</code></pre></div></p>
+<h3 id="_7">表格<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
+<p>建议使用<a href="https://www.tablesgenerator.com/">https://www.tablesgenerator.com/</a>在线生成表格代码，表格代码大致格式如下：
+<div class="language-text highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1"></a><a href="#__codelineno-4-1"><span class="linenos" data-linenos=" 1 "></span></a>\begin{table}[htbp]
+<a id="__codelineno-4-2" name="__codelineno-4-2"></a><a href="#__codelineno-4-2"><span class="linenos" data-linenos=" 2 "></span></a>\centering
+<a id="__codelineno-4-3" name="__codelineno-4-3"></a><a href="#__codelineno-4-3"><span class="linenos" data-linenos=" 3 "></span></a>\caption{表格}
+<a id="__codelineno-4-4" name="__codelineno-4-4"></a><a href="#__codelineno-4-4"><span class="linenos" data-linenos=" 4 "></span></a>\setlength\tabcolsep{40pt} % 调整列间距
+<a id="__codelineno-4-5" name="__codelineno-4-5"></a><a href="#__codelineno-4-5"><span class="linenos" data-linenos=" 5 "></span></a>\renewcommand{\arraystretch}{1.4} % 调整行间距
+<a id="__codelineno-4-6" name="__codelineno-4-6"></a><a href="#__codelineno-4-6"><span class="linenos" data-linenos=" 6 "></span></a>
+<a id="__codelineno-4-7" name="__codelineno-4-7"></a><a href="#__codelineno-4-7"><span class="linenos" data-linenos=" 7 "></span></a>\begin{tabular}{c c} % {}内可以使用|添加竖分割线，元素c表示居中，l/r表示居左/右
+<a id="__codelineno-4-8" name="__codelineno-4-8"></a><a href="#__codelineno-4-8"><span class="linenos" data-linenos=" 8 "></span></a>\hline % 表示添加横分割线
+<a id="__codelineno-4-9" name="__codelineno-4-9"></a><a href="#__codelineno-4-9"><span class="linenos" data-linenos=" 9 "></span></a>符号     &amp; 含义                  \\ \hline
+<a id="__codelineno-4-10" name="__codelineno-4-10"></a><a href="#__codelineno-4-10"><span class="linenos" data-linenos="10 "></span></a>$E_i$ &amp; 第$i$个企业     \\  
+<a id="__codelineno-4-11" name="__codelineno-4-11"></a><a href="#__codelineno-4-11"><span class="linenos" data-linenos="11 "></span></a>$r_i$      &amp; 企业$E_i$的评价指标向量      \\  
+<a id="__codelineno-4-12" name="__codelineno-4-12"></a><a href="#__codelineno-4-12"><span class="linenos" data-linenos="12 "></span></a>$w$      &amp; 层次分析法中的权重向量        \\  
+<a id="__codelineno-4-13" name="__codelineno-4-13"></a><a href="#__codelineno-4-13"><span class="linenos" data-linenos="13 "></span></a>$h_i$      &amp; 企业$E_i$的信贷风险 \\ 
+<a id="__codelineno-4-14" name="__codelineno-4-14"></a><a href="#__codelineno-4-14"><span class="linenos" data-linenos="14 "></span></a>$\alpha_i$      &amp;企业$E_i$的年利率         \\ 
+<a id="__codelineno-4-15" name="__codelineno-4-15"></a><a href="#__codelineno-4-15"><span class="linenos" data-linenos="15 "></span></a>$k$      &amp; 不同类型的企业的受影响程度    \\ 
+<a id="__codelineno-4-16" name="__codelineno-4-16"></a><a href="#__codelineno-4-16"><span class="linenos" data-linenos="16 "></span></a> \hline
+<a id="__codelineno-4-17" name="__codelineno-4-17"></a><a href="#__codelineno-4-17"><span class="linenos" data-linenos="17 "></span></a>\end{tabular}
+<a id="__codelineno-4-18" name="__codelineno-4-18"></a><a href="#__codelineno-4-18"><span class="linenos" data-linenos="18 "></span></a>
+<a id="__codelineno-4-19" name="__codelineno-4-19"></a><a href="#__codelineno-4-19"><span class="linenos" data-linenos="19 "></span></a>\end{table}
+</code></pre></div></p>
+<p>若表格尺寸过小过大，我们还可以使用<code>\resizebox</code>来调整尺寸：
+<div class="language-text highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1"></a><a href="#__codelineno-5-1"><span class="linenos" data-linenos=" 1 "></span></a>% 自动调整表格大小适合页面
+<a id="__codelineno-5-2" name="__codelineno-5-2"></a><a href="#__codelineno-5-2"><span class="linenos" data-linenos=" 2 "></span></a>% \resizebox{\textwidth}{!}
+<a id="__codelineno-5-3" name="__codelineno-5-3"></a><a href="#__codelineno-5-3"><span class="linenos" data-linenos=" 3 "></span></a>
+<a id="__codelineno-5-4" name="__codelineno-5-4"></a><a href="#__codelineno-5-4"><span class="linenos" data-linenos=" 4 "></span></a>\begin{table}[t]
+<a id="__codelineno-5-5" name="__codelineno-5-5"></a><a href="#__codelineno-5-5"><span class="linenos" data-linenos=" 5 "></span></a>  \centering
+<a id="__codelineno-5-6" name="__codelineno-5-6"></a><a href="#__codelineno-5-6"><span class="linenos" data-linenos=" 6 "></span></a>  \caption{The execution time.}
+<a id="__codelineno-5-7" name="__codelineno-5-7"></a><a href="#__codelineno-5-7"><span class="linenos" data-linenos=" 7 "></span></a>  \resizebox{\textwidth}{!}{
+<a id="__codelineno-5-8" name="__codelineno-5-8"></a><a href="#__codelineno-5-8"><span class="linenos" data-linenos=" 8 "></span></a>  \begin{tabular}{ccccccc}
+<a id="__codelineno-5-9" name="__codelineno-5-9"></a><a href="#__codelineno-5-9"><span class="linenos" data-linenos=" 9 "></span></a>    \hline
+<a id="__codelineno-5-10" name="__codelineno-5-10"></a><a href="#__codelineno-5-10"><span class="linenos" data-linenos="10 "></span></a>    NoId &amp; Application &amp; Category &amp; Auto &amp; ReSpark &amp; NativeSpark &amp; InputDataSize \\
+<a id="__codelineno-5-11" name="__codelineno-5-11"></a><a href="#__codelineno-5-11"><span class="linenos" data-linenos="11 "></span></a>    \hline
+<a id="__codelineno-5-12" name="__codelineno-5-12"></a><a href="#__codelineno-5-12"><span class="linenos" data-linenos="12 "></span></a>   1 &amp;   MatrixFactorization &amp; Machine Learning &amp; *s &amp; *s &amp;*s &amp;0.269GBB\\
+<a id="__codelineno-5-13" name="__codelineno-5-13"></a><a href="#__codelineno-5-13"><span class="linenos" data-linenos="13 "></span></a>   2 &amp;   LabelPropagation &amp; Machine Learning &amp; *s &amp; *s &amp;*s &amp;*GB \\
+<a id="__codelineno-5-14" name="__codelineno-5-14"></a><a href="#__codelineno-5-14"><span class="linenos" data-linenos="14 "></span></a>   \hline
+<a id="__codelineno-5-15" name="__codelineno-5-15"></a><a href="#__codelineno-5-15"><span class="linenos" data-linenos="15 "></span></a>\end{tabular}
+<a id="__codelineno-5-16" name="__codelineno-5-16"></a><a href="#__codelineno-5-16"><span class="linenos" data-linenos="16 "></span></a>}
+<a id="__codelineno-5-17" name="__codelineno-5-17"></a><a href="#__codelineno-5-17"><span class="linenos" data-linenos="17 "></span></a>\end{table}
+</code></pre></div></p>
+<h3 id="_8">参考文献引用<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>
 <h2 id="customize-your-cls">Customize your .cls<a class="headerlink" href="#customize-your-cls" title="Permanent link">&para;</a></h2>
 
 
