@@ -46,7 +46,7 @@
       
     
     
-      <link rel="stylesheet" href="../assets/_mkdocstrings.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.css">
     
     <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
@@ -533,6 +533,8 @@
       
         
       
+        
+      
     
     
       
@@ -855,6 +857,16 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      电源模块
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="电源模块">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#ac220v-to-dc5v" class="md-nav__link">
     <span class="md-ellipsis">
       AC220V to DC5V
@@ -862,13 +874,42 @@
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#5v-to-415v" class="md-nav__link">
     <span class="md-ellipsis">
       5V to 41.5V
     </span>
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      脱落检测+短路检测
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="脱落检测+短路检测">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#20240305" class="md-nav__link">
+    <span class="md-ellipsis">
+      2024/03/05
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -915,6 +956,16 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      电源模块
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="电源模块">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#ac220v-to-dc5v" class="md-nav__link">
     <span class="md-ellipsis">
       AC220V to DC5V
@@ -922,13 +973,42 @@
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#5v-to-415v" class="md-nav__link">
     <span class="md-ellipsis">
       5V to 41.5V
     </span>
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      脱落检测+短路检测
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="脱落检测+短路检测">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#20240305" class="md-nav__link">
+    <span class="md-ellipsis">
+      2024/03/05
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -950,10 +1030,31 @@
   
 
 
-<h1 id="_1">电源模块<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
-<h2 id="ac220v-to-dc5v">AC220V to DC5V<a class="headerlink" href="#ac220v-to-dc5v" title="Permanent link">&para;</a></h2>
-<h2 id="5v-to-415v">5V to 41.5V<a class="headerlink" href="#5v-to-415v" title="Permanent link">&para;</a></h2>
-<h1 id="_2">脱落检测<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h1>
+<h1 id="_1">二类经皮电刺激<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<blockquote>
+<p>项目来源于lyb老师，本人第一次参与组会的项目</p>
+<p>产出：生医工竞赛*1（进展ing）</p>
+</blockquote>
+<h2 id="_2">电源模块<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<h3 id="ac220v-to-dc5v">AC220V to DC5V<a class="headerlink" href="#ac220v-to-dc5v" title="Permanent link">&para;</a></h3>
+<h3 id="5v-to-415v">5V to 41.5V<a class="headerlink" href="#5v-to-415v" title="Permanent link">&para;</a></h3>
+<h2 id="_3">脱落检测+短路检测<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<h3 id="20240305">2024/03/05<a class="headerlink" href="#20240305" title="Permanent link">&para;</a></h3>
+<p>通过测量通路电流情况来判断通路情况：</p>
+<ul>
+<li>
+<p>正常连接</p>
+</li>
+<li>
+<p>导联脱落</p>
+</li>
+<li>
+<p>导联短路：通路电流上升</p>
+</li>
+</ul>
+<p>由于系统输出电流量级较小，直接使用MCU ADC可能难以分辨，故使用差分运放进行处理</p>
+<p><img alt="示例图片" src="../img/%E7%BB%8F%E7%9A%AE_ina186.PNG" width="80%" /></p>
+<p><img alt="示例图片" src="../img/%E7%BB%8F%E7%9A%AE_sch1.PNG" width="80%" /></p>
 
 
 
@@ -1046,6 +1147,12 @@
     
     
       <script src="../assets/javascripts/bundle.8fd75fb4.min.js"></script>
+      
+        <script src="../javascripts/katex.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/contrib/auto-render.min.js"></script>
       
     
   </body>

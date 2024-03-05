@@ -48,7 +48,7 @@
       
     
     
-      <link rel="stylesheet" href="../assets/_mkdocstrings.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.css">
     
     <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
@@ -584,6 +584,57 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      算法效率分析基础
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="算法效率分析基础">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      效率分析框架
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      算法效率的渐进表征
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      非递归算法效率分析
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      递归算法效率分析
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -629,6 +680,8 @@
   
     
     
+      
+        
       
         
       
@@ -916,6 +969,57 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      算法效率分析基础
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="算法效率分析基础">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      效率分析框架
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      算法效率的渐进表征
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      非递归算法效率分析
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      递归算法效率分析
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -936,6 +1040,107 @@
 
 <h1 id="_1">数据分析与算法设计<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
 <h2 id="_2">绪论<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<h2 id="_3">算法效率分析基础<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<h3 id="_4">效率分析框架<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p>时间效率：运行速度快慢的度量（时间复杂度）</p>
+<p>空间效率：运行存储空间大小的度量（空间复杂度）</p>
+</blockquote>
+<p>1.<strong>输入规模的度量</strong></p>
+<p>时间效率是算法输入规模的函数。选取算法关键参数作为输入规模的度量：</p>
+<ul>
+<li>
+<p>排序、查找：列表长度n</p>
+</li>
+<li>
+<p>两个矩阵相乘：矩阵维度或元素个数</p>
+</li>
+<li>
+<p>有向图：顶点及边的数目</p>
+</li>
+</ul>
+<p>2.<strong>运行时间的度量单位</strong></p>
+<p>对于输入规模为n的算法，可采用算法的<strong>基本操作执行次数</strong>来度量其效率：</p>
+<blockquote>
+<p>基本操作：算法中最重要、对总运行时间贡献最大的操作</p>
+<p>排序：比较；图问题：边或节点的访问</p>
+</blockquote>
+<p>执行次数C(n)是输入规模n的函数，算法运行时间T(n)是执行次数C(n)的函数。</p>
+<p>3.<strong>算法最优、最差和平均效率</strong></p>
+<p>4.<strong>增长次数</strong></p>
+<p>小规模的输入在运行时间上不能区分算法效率，要考虑对于大规模输入时执行次数的增长次数。</p>
+<p><img alt="本地路径" src="../img/%E7%AE%97%E6%B3%95_%E5%A2%9E%E9%95%BF%E6%AC%A1%E6%95%B0.png" /></p>
+<h3 id="_5">算法效率的渐进表征<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<p>1.<strong>O的定义</strong></p>
+<table>
+<thead>
+<tr>
+<th><img alt="shots" src="../img/%E7%AE%97%E6%B3%95_O1.png" /></th>
+<th><img alt="shots" src="../img/%E7%AE%97%E6%B3%95_O2.png" /></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>2.<strong><span class="arithmatex">\(\Omega\)</span>的定义</strong></p>
+<table>
+<thead>
+<tr>
+<th><img alt="shots" src="../img/%E7%AE%97%E6%B3%95_Omega1.png" /></th>
+<th><img alt="shots" src="../img/%E7%AE%97%E6%B3%95_Omega2.png" /></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>3.<strong><span class="arithmatex">\(\Theta\)</span>的定义</strong></p>
+<table>
+<thead>
+<tr>
+<th><img alt="shots" src="../img/%E7%AE%97%E6%B3%95_theta1.png" /></th>
+<th><img alt="shots" src="../img/%E7%AE%97%E6%B3%95_theta2.png" /></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>4.<strong>渐进符号的特性</strong></p>
+<ul>
+<li>
+<p>若<span class="arithmatex">\(t_1(n) \in O(f(n)),t_2(n) \in O(g(n))\)</span>,则<span class="arithmatex">\(t_1(n)+t_2(n) \in O(max{f(n),g(n)})\)</span></p>
+</li>
+<li>
+<p>利用极限计算 </p>
+</li>
+</ul>
+<p><img alt="示例图片" src="../img/%E7%AE%97%E6%B3%95_lim.png" width="60%" /></p>
+<ul>
+<li>
+<p>洛必达法则</p>
+</li>
+<li>
+<p>史特林公式</p>
+</li>
+</ul>
+<p>5.<strong>常见的渐进时间效率类型</strong></p>
+<p><img alt="示例图片" src="../img/%E7%AE%97%E6%B3%95_n.png" /></p>
+<h3 id="_6">非递归算法效率分析<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
+<h3 id="_7">递归算法效率分析<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
+<p>1.<strong>n!的递归算法</strong></p>
+<p>2.<strong>汉诺塔问题</strong></p>
+<p>3.<strong>斐波那契数列</strong></p>
 
 
 
@@ -1044,6 +1249,12 @@
     
     
       <script src="../assets/javascripts/bundle.8fd75fb4.min.js"></script>
+      
+        <script src="../javascripts/katex.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/contrib/auto-render.min.js"></script>
       
     
   </body>
