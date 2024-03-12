@@ -635,6 +635,66 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      蛮力法
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="蛮力法">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      选择排序和冒泡排序
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      顺序查找和蛮力字符串匹配
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      最近对和凸包问题的蛮力算法
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      穷举查找
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      深度优先查找和广度优先查找
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1020,6 +1080,66 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      蛮力法
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="蛮力法">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      选择排序和冒泡排序
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      顺序查找和蛮力字符串匹配
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      最近对和凸包问题的蛮力算法
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      穷举查找
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      深度优先查找和广度优先查找
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1141,6 +1261,108 @@
 <p>1.<strong>n!的递归算法</strong></p>
 <p>2.<strong>汉诺塔问题</strong></p>
 <p>3.<strong>斐波那契数列</strong></p>
+<h2 id="_8">蛮力法<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h2>
+<h3 id="_9">选择排序和冒泡排序<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h3>
+<p><strong>1.选择排序</strong></p>
+<p>原理：选择排序开始的时候，我们扫描整个列表，找到它的最小元素，然后和第一个元素交换，将最小元素放到它在有序表中的最终位置上。然后我们从第二个元素开始扫描列表，找到最后n-1 个元素中的最小元素，再和第二个元素交换位置，把第二小的元素放在它的最终位置上。一般来说，在对该列表做第i遍扫描的时候（i的值从0 到n-2）, 该算法在最后n-i个元素中寻找最小元素，然后拿它和Ai交换。在n-1 遍以后，该列表就被排好序了。</p>
+<p>算法特性：</p>
+<ul>
+<li>
+<p>基本操作：比较</p>
+</li>
+<li>
+<p>执行次数：$ C(n)=\sum\limits_{i=0}^{n-2} \sum\limits_{j=i+1}^{n-1}1 = \frac{n(n-1)}{2} \in \Theta (n^2) $</p>
+</li>
+<li>
+<p>不稳定性、在位性</p>
+</li>
+</ul>
+<p>选择排序算法的伪代码如下：</p>
+<p><img alt="示例图片" src="../img/%E7%AE%97%E6%B3%95_%E9%80%89%E6%8B%A9%E6%8E%92%E5%BA%8F.png" /></p>
+<p><strong>2.冒泡排序</strong></p>
+<p>原理：比较表中的相邻元素，如果它们是逆序的话
+就交换它们的位置。重复多次以后，最终，最大的元素就“沉到”列表的最后一个位置。
+第二遍操作将第二大的元素沉下去。这样一直做，直到n-1 遍以后，该列表就排好序了。</p>
+<p>算法特性：</p>
+<ul>
+<li>
+<p>基本操作：比较</p>
+</li>
+<li>
+<p>执行次数：$ C(n)=\sum\limits_{i=0}^{n-2} \sum\limits_{j=0}^{n-2-i}1 = \frac{n(n-1)}{2} \in \Theta (n^2) $</p>
+</li>
+<li>稳定性</li>
+</ul>
+<p>冒泡排序算法的伪代码如下：</p>
+<p><img alt="示例图片" src="../img/%E7%AE%97%E6%B3%95_%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F.png" /></p>
+<p>改进的冒泡排序算法如下：</p>
+<p><img alt="示例图片" src="../img/%E7%AE%97%E6%B3%95_%E6%94%B9%E8%BF%9B%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F.png" width="50%" /></p>
+<h3 id="_10">顺序查找和蛮力字符串匹配<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h3>
+<p><strong>1.顺序查找</strong></p>
+<p>该算法只是简单地将给定列表中的连续元素和给定的查找键进行比较，直到遇到一个匹配的元素（成功查找），或者在遇到匹配元素前就遍历了整个列表（失败查找）。实现顺序查找时常常会使用这样一个小技巧：如果我们把查找键添加到列表的末尾，
+那么查找就一定会成功，所以不必在算法的每次循环时都检查是否到达了表的末尾。以下是这个增强版本的伪代码：</p>
+<p><img alt="示例图片" src="../img/%E7%AE%97%E6%B3%95_%E9%A1%BA%E5%BA%8F%E6%9F%A5%E6%89%BE.png" /></p>
+<p><strong>2.蛮力字符串匹配</strong></p>
+<p>将模式对准文本的前m个字符，然后从左到右匹配每一对相应的字符，直到m对字符全部匹配或者遇到一对不匹配的字符。在后一种情况下，模式向右移一位，然后从模式的第一个字符开始，继续把模式和文本中的对应字符进行比较。在文本中，最后一轮子串匹配的起始位置是n-m。在这个位置以后，再也没有足够的字符可以匹配整个模式了，因此，该算法也就没有必要再做比较了。</p>
+<p>时间效率:</p>
+<ul>
+<li>最差效率：<span class="arithmatex">\(\Theta (nm)\)</span></li>
+<li>平均效率：<span class="arithmatex">\(\Theta (n)\)</span></li>
+</ul>
+<p><img alt="示例图片" src="../img/%E7%AE%97%E6%B3%95_%E8%9B%AE%E5%8A%9B%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%8C%B9%E9%85%8D.png" /></p>
+<h3 id="_11">最近对和凸包问题的蛮力算法<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h3>
+<p><strong>1.最近对问题</strong></p>
+<p>算法思想：分别计算每一对点之间的距离，然后找出距离最小的那一对。为避免对同一对点计算两次距离，计算时只考虑i&lt;j的那些对</p>
+<p>算法特性：</p>
+<ul>
+<li>基本操作：求平方</li>
+<li>执行次数：<span class="arithmatex">\(C(n)=\sum\limits_{i=1}^{n-1} \sum\limits_{j=i+1}^{n}2=n(n-1) \in \Theta (n^2)\)</span></li>
+</ul>
+<p><img alt="示例图片" src="../img/%E7%AE%97%E6%B3%95_%E6%9C%80%E8%BF%91%E5%AF%B9.png" /></p>
+<p><strong>2.凸包问题</strong></p>
+<blockquote>
+<p>凸集：设S为平面点集，若S中任意两点的连线都属于该集合，则称S是凸集</p>
+<p>凸包：一个点集S的凸包是指包含S的最小凸集；若S本身为凸集，则S的凸包为他本身</p>
+<p>定理：任意包含n&gt;2个点（不共线）的集合S的凸包是以S中的某些点为顶点的凸多边形；如果所有的点都位于一条直线上，多边形退化为一条线段，但它的两个端点仍然包含在S中</p>
+<p>极点：对于任何以集合中的点为端点的线段来说，它们不是这种线段的中点。凸多边形的顶点就是极点</p>
+</blockquote>
+<p>算法思想：对于一个n个点集合中的两个点Pi和Pj，当且仅当该集合中的其他点都位于穿过这两点的直线的同一边时，它们的连线是该集合凸包边界的一部分。对每一对点都做一遍检验之后，满足条件的线段构成了该凸包的边界。</p>
+<p>首先，在坐标平面上穿过两个点(x1, y1)(x2,y2)的直线是由下列方程定义的：
+<span class="arithmatex">\(ax+by=c\)</span></p>
+<p>其次，这样一根直线把平面分为两个半平面：其中一个半平面中的点都满足ax+by&gt;c，而另一个半平面中的点都满足ax+by&lt;c。因此，为了检验某些点是否位于这条直线的同一边，只需把每个点代入ax+by-c,检验这个表达式的符号是否相同。</p>
+<p>时间效率：<span class="arithmatex">\(O(n^3)\)</span></p>
+<h3 id="_12">穷举查找<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h3>
+<p><strong>1.旅行商问题</strong></p>
+<p>TSP（Traveling salesman problem）：给定n个城市相互之间的距离，求一条能走遍n个城市的最短路径，使我们能从任一城市开始，访问每个城市只一次，最后回到起点。</p>
+<table>
+<thead>
+<tr>
+<th><img alt="shots" src="../img/%E7%AE%97%E6%B3%95_%E6%97%85%E8%A1%8C%E5%95%861.png" /></th>
+<th><img alt="shots" src="../img/%E7%AE%97%E6%B3%95_%E6%97%85%E8%A1%8C%E5%95%862.png" /></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><strong>2.背包问题</strong></p>
+<p>给定n个重量为w1、w2、...、wn，价值为v1、v2、...、vn的物品和一个承重为W的背包，要求选择一些物品装入背包，使背包内物品的价值之和达到最大。</p>
+<p>所有可能的子集个数有<span class="arithmatex">\(2^n\)</span>个，因此穷举法的时间效率为<span class="arithmatex">\(\Omega (2^n)\)</span></p>
+<p><strong>3.分配问题</strong></p>
+<p>有n个任务需要分配给n个人执行，一人一个任务。将第j个任务分配给第i个人的成本是C[ i , j ]，求总成本最小的分配方案。</p>
+<p>穷举法需要列出所有n!个可能的分配方案，更高效的算法为<strong>匈牙利算法</strong>(<span class="arithmatex">\(O(n^3)\)</span>)</p>
+<blockquote>
+<p>定理1：</p>
+<p>定理2：若将分配问题的成本矩阵每行每列分别减去各行与各列的最小元素，则得到的新分配问题</p>
+</blockquote>
+<h3 id="_13">深度优先查找和广度优先查找<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h3>
+<p><strong>1.深度优先查找</strong></p>
+<p><img alt="示例图片" src="../img/%E7%AE%97%E6%B3%95_DFS.png" /></p>
+<p><strong>2.广度优先查找</strong></p>
+<p><img alt="示例图片" src="../img/%E7%AE%97%E6%B3%95_BFS.png" /></p>
 
 
 
