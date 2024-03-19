@@ -708,32 +708,14 @@
           <li class="md-nav__item">
   <a href="#_15" class="md-nav__link">
     <span class="md-ellipsis">
-      插入排序
+      减常量问题
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_16" class="md-nav__link">
-    <span class="md-ellipsis">
-      拓扑排序
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_17" class="md-nav__link">
-    <span class="md-ellipsis">
-      生成组合对象的算法
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_18" class="md-nav__link">
+  <a href="#_21" class="md-nav__link">
     <span class="md-ellipsis">
       减常因子算法
     </span>
@@ -742,7 +724,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_19" class="md-nav__link">
+  <a href="#_22" class="md-nav__link">
     <span class="md-ellipsis">
       减可变规模算法
     </span>
@@ -1215,32 +1197,14 @@
           <li class="md-nav__item">
   <a href="#_15" class="md-nav__link">
     <span class="md-ellipsis">
-      插入排序
+      减常量问题
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_16" class="md-nav__link">
-    <span class="md-ellipsis">
-      拓扑排序
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_17" class="md-nav__link">
-    <span class="md-ellipsis">
-      生成组合对象的算法
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_18" class="md-nav__link">
+  <a href="#_21" class="md-nav__link">
     <span class="md-ellipsis">
       减常因子算法
     </span>
@@ -1249,7 +1213,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_19" class="md-nav__link">
+  <a href="#_22" class="md-nav__link">
     <span class="md-ellipsis">
       减可变规模算法
     </span>
@@ -1486,11 +1450,189 @@
 <p><strong>2.广度优先查找</strong></p>
 <p><img alt="示例图片" src="../img/%E7%AE%97%E6%B3%95_BFS.png" /></p>
 <h2 id="_14">减治法<a class="headerlink" href="#_14" title="Permanent link">&para;</a></h2>
-<h3 id="_15">插入排序<a class="headerlink" href="#_15" title="Permanent link">&para;</a></h3>
-<h3 id="_16">拓扑排序<a class="headerlink" href="#_16" title="Permanent link">&para;</a></h3>
-<h3 id="_17">生成组合对象的算法<a class="headerlink" href="#_17" title="Permanent link">&para;</a></h3>
-<h3 id="_18">减常因子算法<a class="headerlink" href="#_18" title="Permanent link">&para;</a></h3>
-<h3 id="_19">减可变规模算法<a class="headerlink" href="#_19" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p>基本思想：利用一个问题给定实例的解和同样问题较小实例的解之间的某种关系，将问题的规模递减，然后基于小规模问题的解，得到大规模问题的解</p>
+<p>自顶向下(递归)，自底向上(非递归)</p>
+<p>3个主要变种：减常量、减常量因子、减可变规模</p>
+</blockquote>
+<h3 id="_15">减常量问题<a class="headerlink" href="#_15" title="Permanent link">&para;</a></h3>
+<h4 id="_16">插入排序<a class="headerlink" href="#_16" title="Permanent link">&para;</a></h4>
+<p>1.直接插入排序</p>
+<p><img alt="" src="../img/%E7%AE%97%E6%B3%95_%E7%9B%B4%E6%8E%A5%E6%8F%92%E6%8E%92.png" width="70%" /></p>
+<ul>
+<li>效率分析：</li>
+<li><span class="arithmatex">\(C_{worst}(n)=\sum\limits_{i=1}^{n-1} \sum\limits_{j=0}^{i-1}1=\frac{n(n-1)}{2} \in \Theta (n^2)\)</span></li>
+<li><span class="arithmatex">\(C_{best}(n)=\sum\limits_{i=1}^{n-1}1=n-1 \in \Theta (n)\)</span></li>
+<li><span class="arithmatex">\(C_{avg}(n)=\frac{n^2}{4} \in \Theta (n^2)\)</span></li>
+</ul>
+<hr />
+<p>2.希尔(Shell)排序</p>
+<p><img alt="shots" src="../img/%E7%AE%97%E6%B3%95_Shell1.png" width="70%" />
+<img alt="shots" src="../img/%E7%AE%97%E6%B3%95_Shell2.png" /></p>
+<h4 id="_17">拓扑排序<a class="headerlink" href="#_17" title="Permanent link">&para;</a></h4>
+<blockquote>
+<p>对于给定的无环有向图，要求按照某种顺序列出它的顶点序列，使图的每一条边的起点总在结束顶点之前</p>
+</blockquote>
+<p>1.基于DFS</p>
+<p>执行DFS遍历，记录顶点出栈顺序，出站顺序倒过来就得到拓扑排序的一个解</p>
+<p><img alt="" src="../img/%E7%AE%97%E6%B3%95_%E6%8B%93%E6%89%911.png" /></p>
+<p>2.减(一)治</p>
+<p>在每次迭代时，将没有输入边的节点从有向图中删除
+<img alt="" src="../img/%E7%AE%97%E6%B3%95_%E6%8B%93%E6%89%912.png" /></p>
+<h4 id="_18">生成组合对象的算法<a class="headerlink" href="#_18" title="Permanent link">&para;</a></h4>
+<h5 id="_19">生成排列<a class="headerlink" href="#_19" title="Permanent link">&para;</a></h5>
+<p>1.插入法</p>
+<ul>
+<li>减(一)治：生成[1,...,n-1]的排列，在此基础上，对每个排列插入n，从而得到[1,...,n]的排列</li>
+<li>好处：最小变化</li>
+</ul>
+<p>2.Johnson-Trotter法</p>
+<blockquote>
+<p>不需要知道规模为n-1的排列，直接得到规模为n的排列结果</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th><img alt="shots" src="../img/%E7%AE%97%E6%B3%95_JT1.png" /></th>
+<th><img alt="shots" src="../img/%E7%AE%97%E6%B3%95_JT2.png" /></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>时间效率：<span class="arithmatex">\(\Theta (n!)\)</span></li>
+<li>具有“最小变化”特性</li>
+</ul>
+<p>3.字典顺序法</p>
+<table>
+<thead>
+<tr>
+<th><img alt="shots" src="../img/%E7%AE%97%E6%B3%95_%E5%AD%97%E5%85%B81.png" /></th>
+<th><img alt="shots" src="../img/%E7%AE%97%E6%B3%95_%E5%AD%97%E5%85%B82.png" /></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h5 id="_20">生成子集<a class="headerlink" href="#_20" title="Permanent link">&para;</a></h5>
+<p>1.减(一)治</p>
+<p><img alt="" src="../img/%E7%AE%97%E6%B3%95_%E5%AD%90%E9%9B%861.png" /></p>
+<p>2.位串法</p>
+<p>每个子集与一个n位二进制串对应：（不满足“最小变化”特点）</p>
+<p><img alt="" src="../img/%E7%AE%97%E6%B3%95_%E5%AD%90%E9%9B%862.png" /></p>
+<p>3.格雷编码位串</p>
+<p><img alt="" src="../img/%E7%AE%97%E6%B3%95_%E5%AD%90%E9%9B%863.png" /></p>
+<h3 id="_21">减常因子算法<a class="headerlink" href="#_21" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p>思想：每次迭代问题规模减去一个相同的常数因子</p>
+</blockquote>
+<p>1.折半查找</p>
+<ul>
+<li>问题：给定查找键值K，在一个升序数组中查找匹配的元素位置</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th><img alt="" src="../img/%E7%AE%97%E6%B3%95_%E6%8A%98%E5%8D%8A1.png" /></th>
+<th><img alt="shots" src="../img/%E7%AE%97%E6%B3%95_%E6%8A%98%E5%8D%8A2.png" /></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>时间效率：</li>
+<li><span class="arithmatex">\(C_{worst}(n)=C_{worst}(n/2)+1 ,for\quad n &gt; 1, C_{worst}(1)=1\)</span></li>
+<li>对于一般n：<span class="arithmatex">\(C_{worst}(n)=[log_2n]+1=[log_2(n+1)]\)</span></li>
+<li><span class="arithmatex">\(C_{avg}(n)=log_2n\)</span></li>
+</ul>
+<hr />
+<p>2.假币问题</p>
+<p>有n个外观相同的硬币，其中一个是假币。假币的重量比真币要轻一点。假定有一架天平，需设计高效的算法（用最少的天平使用次数）来检测出假币</p>
+<ul>
+<li>减(n/2)治</li>
+</ul>
+<p>思路：把n个硬币分为两堆，每堆[n/2]个，称一次，可确定假币在哪一堆（如果n为奇数，就留下一枚多余的硬币）</p>
+<p>最差效率：<span class="arithmatex">\(W(n)=[log_2n]\)</span></p>
+<ul>
+<li>改进：按照没堆[n/3]个分为3堆，时间效率提升为<span class="arithmatex">\(log_3n\)</span></li>
+</ul>
+<hr />
+<p>3.约瑟夫斯问题</p>
+<p><img alt="" src="../img/%E7%AE%97%E6%B3%95_%E7%BA%A6%E7%91%9F%E5%A4%AB%E6%96%AF1.png" /></p>
+<ul>
+<li>减一治(数学归纳法)：<span class="arithmatex">\(L(n,2)=2b+1\)</span>,其中<span class="arithmatex">\(b=n-2^a\)</span></li>
+<li>当m=3,4...时？</li>
+</ul>
+<h3 id="_22">减可变规模算法<a class="headerlink" href="#_22" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p>每次迭代问题规模的变化模式不同</p>
+</blockquote>
+<p>1.计算中值和选择问题</p>
+<ul>
+<li>
+<p>划分算法：利用快速排序的分区思想，将数组根据某个值p进行划分整理，使得左边部分包含小于或等于p的元素，接着是中轴(pivot)p元素，然后是所有大于或等于p的元素</p>
+</li>
+<li>
+<p>Lomuto划分</p>
+</li>
+</ul>
+<p><img alt="" src="../img/%E7%AE%97%E6%B3%95_Lomuto.png" /></p>
+<ul>
+<li>快速选择算法</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th><img alt="" src="../img/%E7%AE%97%E6%B3%95_%E5%BF%AB%E9%80%891.png" /></th>
+<th><img alt="shots" src="../img/%E7%AE%97%E6%B3%95_%E5%BF%AB%E9%80%892.png" /></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>时间效率：</p>
+<ul>
+<li><span class="arithmatex">\(C_{best}(n)=n-1 \in \Theta (n)\)</span></li>
+<li><span class="arithmatex">\(C_{worst}(n)=\frac{n(n-1)}{2} \in \Theta (n^2)\)</span></li>
+<li><span class="arithmatex">\(C_{avg}(n) \in \Theta (n)\)</span></li>
+</ul>
+<hr />
+<p>2.二叉查找树的查找和插入</p>
+<p>二叉查找树的性质：</p>
+<ul>
+<li>每个节点作为搜索对象，它的关键字是互补相同的</li>
+<li>节点左子树上的关键字都小于该节点的关键字</li>
+<li>节点右子树上的关键字都大于该节点的关键字</li>
+</ul>
+<p>时间效率：</p>
+<ul>
+<li><span class="arithmatex">\(C_{worst}(n)=n\)</span></li>
+<li><span class="arithmatex">\(C_{avg}(n)=1.39log_2n\)</span></li>
+</ul>
+<hr />
+<p>3.拈游戏</p>
+<p>有一堆棋子，个数为n，甲、乙玩家轮流从这堆棋子中拿走一定数量（每次只能拿走最少1个，最多m个棋子）的棋子，每次拿走的棋子数量可以不同，哪个玩家能够胜利拿到最后那个棋子？是先走还是后走的？</p>
+<ul>
+<li>甲先拿：只有当棋子数n不是m+1的倍数时，甲只要每次拿走 n  mod  (m+1)个棋子后，剩余的棋子数一定为（m+1）的倍数，甲必胜出</li>
+</ul>
 
 
 
