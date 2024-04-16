@@ -1021,7 +1021,7 @@
           <li class="md-nav__item">
   <a href="#_55" class="md-nav__link">
     <span class="md-ellipsis">
-      数据压缩
+      哈夫曼树及编码
     </span>
   </a>
   
@@ -1858,7 +1858,7 @@
           <li class="md-nav__item">
   <a href="#_55" class="md-nav__link">
     <span class="md-ellipsis">
-      数据压缩
+      哈夫曼树及编码
     </span>
   </a>
   
@@ -2768,13 +2768,57 @@
 <p><img alt="" src="../img/%E6%9C%80%E4%BC%98%E4%BA%8C%E5%8F%89%E6%9F%A5%E6%89%BE%E6%A0%911.png" /></p>
 <p><img alt="" src="../img/%E6%9C%80%E4%BC%98%E4%BA%8C%E5%8F%89%E6%9F%A5%E6%89%BE%E6%A0%912.png" /></p>
 <h2 id="_52">贪婪技术<a class="headerlink" href="#_52" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p>基本思想：通过一系列步骤来构造问题的解，每一步对目前构造的部分解做一个扩展，直到获得问题的完整解为止。所做的每一步选择必须满足“可行性”“局部最优”“不可取消”</p>
+</blockquote>
 <h3 id="_53">最小生成树的构造<a class="headerlink" href="#_53" title="Permanent link">&para;</a></h3>
+<p><img alt="" src="../img/%E6%9C%80%E5%B0%8F%E7%94%9F%E6%88%90%E6%A0%911.png" /></p>
 <h4 id="prim">Prim算法<a class="headerlink" href="#prim" title="Permanent link">&para;</a></h4>
+<p>基本思想：通过一系列不断扩张的子树来构造</p>
+<ul>
+<li>从图的顶点集合中任选一个顶点，作为初始子树</li>
+<li>以一种贪婪的方式扩张当前的生成树，将不在树中的最近顶点添加到树中（最近顶点是指与树中的顶点相连，且边权重最小的一个顶点）</li>
+<li>上述操作迭代n-1次后，完成生成树的构造</li>
+</ul>
+<p>迭代过程中需要更新的信息：生成树中的顶点集合、不在生成树中的顶点集合、不在生成树中的顶点到生成树顶点的最短距离</p>
+<p><img alt="" src="../img/prim1.png" /></p>
+<p>算法最优性/效率：</p>
+<table>
+<thead>
+<tr>
+<th><img alt="" src="../img/prim2.png" /></th>
+<th><img alt="" src="../img/prim3.png" /></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
 <h4 id="kruskal">Kruskal算法<a class="headerlink" href="#kruskal" title="Permanent link">&para;</a></h4>
+<p>基本思想：通过一系列不断扩展到子图来构造</p>
+<ul>
+<li>排序：将图的边集E中所有边按权值从小到大排序</li>
+<li>用权值最小的边初始化边集<span class="arithmatex">\(E_T\)</span> </li>
+<li>按权值顺序访问后续每条边，若将相应的边加入子图中不会产生回路，则把该边加入最小生成树的边集<span class="arithmatex">\(E_T\)</span>中</li>
+<li>当边集<span class="arithmatex">\(E_T\)</span>的边个数为n-1时，得到的<span class="arithmatex">\(G_T=(V_T,E_T)\)</span>即为最小生成树</li>
+</ul>
+<p><img alt="" src="../img/kruskal1.png" /></p>
 <h3 id="_54">求解加权图最短路径<a class="headerlink" href="#_54" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p>单起点最短路径问题：加权连通图的某个顶点作为起点，计算到所有其它点之间的最短路径</p>
+</blockquote>
 <h4 id="dijkstra">Dijkstra算法<a class="headerlink" href="#dijkstra" title="Permanent link">&para;</a></h4>
-<h3 id="_55">数据压缩<a class="headerlink" href="#_55" title="Permanent link">&para;</a></h3>
-<h4 id="_56">哈夫曼树及编码<a class="headerlink" href="#_56" title="Permanent link">&para;</a></h4>
+<p>基本思想：由近而远，依次寻找离源点最近的顶点</p>
+<p><img alt="" src="../img/dijkstra1.png" /></p>
+<p><img alt="" src="../img/dijkstra2.png" /></p>
+<p>算法效率：</p>
+<p><img alt="" src="../img/dijkstra3.png" /></p>
+<h3 id="_55">哈夫曼树及编码<a class="headerlink" href="#_55" title="Permanent link">&para;</a></h3>
+<p><img alt="" src="../img/%E5%93%88%E5%A4%AB%E6%9B%BC%E6%A0%911.png" /></p>
+<p><img alt="" src="../img/%E5%93%88%E5%A4%AB%E6%9B%BC%E6%A0%912.png" /></p>
 
 
 
